@@ -42,27 +42,35 @@
           //YOUR TURN: Replace with csv export link
           url: 'https://docs.google.com/spreadsheets/d/1BrpScl-lXIB9rmELs3LzjPcUT6THi52S65W9PXvxNsQ/gviz/tq?tqx=out:csv&sheet=Sheet1',
           dataType: "text",
-          success: function (csvData) { makeGeoJSON(csvData); }
+          success: function(csvData) { return csvData; },
+          failure: function(response){ console.log('non ci sono dati');}
         });
-        function makeGeoJSON(csvData) {
-            csv2geojson.csv2geojson(csvData, {
-                name : 'Name',
-                address: 'Address',
-                city: 'City',
-                province: 'State_Province',
-                zip: 'Zip_code',
-                country: 'Country',
-                latfield: 'Latitude',
-                lonfield: 'Longitude',
-                phone: 'Phone',
-                website: 'Website',
-                category: 'Category',
-                delimiter: ','
-            }, function(err, data) {
-                console.log(data);
-            });
-        }
+
+        return csvData;
     });
+
+
+    function makeGeoJSON(csvData) {
+        csv2geojson.csv2geojson(csvData, {
+            name : 'Name',
+            address: 'Address',
+            city: 'City',
+            province: 'State_Province',
+            zip: 'Zip_code',
+            country: 'Country',
+            latfield: 'Latitude',
+            lonfield: 'Longitude',
+            phone: 'Phone',
+            website: 'Website',
+            category: 'Category',
+            delimiter: ','
+        }, function(err, data) {
+
+        });
+    }
+    
+
+    
       /**
        * Add the map to the page
        */
@@ -74,7 +82,6 @@
         scrollZoom: true
       });
 
-      
       const stores = {
         'type': 'FeatureCollection',
         'features': [
