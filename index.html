@@ -45,7 +45,7 @@
           success: function(csvData) { return csvData; },
           failure: function(response){ console.log('non ci sono dati');}
         });
-
+        /* il problema è sul ritornare i dati */
         return csvData;
     });
 
@@ -76,7 +76,7 @@
        */
       const map = new mapboxgl.Map({
         container: 'map',
-        style: 'mapbox://styles/mapbox/light-v10',
+        style: 'mapbox://styles/andreabrunelli93/cku85j8ut571s19rz0t03363w',
         center: [11.002374885021773, 45.443389441640925],
         zoom: 13,
         scrollZoom: true
