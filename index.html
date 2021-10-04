@@ -18,6 +18,7 @@
     <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
     <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
 
 
     <link rel="stylesheet" href="style.css">
@@ -33,6 +34,7 @@
       <div id="listings" class="listings"></div>
     </div>
     <div id="map" class="map"></div>
+    
     <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
 
@@ -43,16 +45,16 @@
             url: 'https://docs.google.com/spreadsheets/d/1BrpScl-lXIB9rmELs3LzjPcUT6THi52S65W9PXvxNsQ/gviz/tq?tqx=out:csv&sheet=Sheet1',
             dataType: "text",
             async: !1,
-            success: function(csvData) { data =  csvData;
-                                         return data;
-                                         },
+            success: function(csvData) {   makeGeoJSON(csvData);    },
             failure: function(response){ console.log('non ci sono dati');}
             });
             
     }
+    
+    var stores = "";
 
     function makeGeoJSON(csvData) {
-        var geo_json = csv2geojson.csv2geojson(csvData, {
+        geo_json = csv2geojson.csv2geojson(csvData, {
             name : 'Name',
             address: 'Address',
             city: 'City',
@@ -66,20 +68,20 @@
             category: 'Category',
             delimiter: ','
         }, function(err, data) {
-            return data;
+            stores = data;
+            console.log('questi sono i dati ' + data);
         });
-        console.log('Interno funzione ' + geo_json);
         return geo_json;
     }
     
+
     var csvData = testAjax().responseText;
     console.log('questi sono i csv ' + csvData);
-    var stores = makeGeoJSON(csvData);
     console.log('questi sono gli stores ' + stores);
 
 
 
-          /**
+        /**
        * Add the map to the page
        */
       const map = new mapboxgl.Map({
@@ -97,6 +99,8 @@
        */
       stores.features.forEach((store, i) => {
         store.properties.id = i;
+        console.log('faccio for each degli stores');
+
       });
 
       /**
@@ -125,6 +129,8 @@
        * Add a marker to the map for every store listing.
        **/
       function addMarkers() {
+        console.log('aggiungo i puntatori');
+
         /* For each feature in the GeoJSON object above: */
         for (const marker of stores.features) {
           /* Create a div element for the marker. */
