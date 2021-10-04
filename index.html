@@ -29,7 +29,7 @@
   <body>
     <div class="sidebar">
       <div class="heading">
-        <h1>Our locations</h1>
+        <h1>Salmon DigiMap</h1>
       </div>
       <div id="listings" class="listings"></div>
     </div>
@@ -37,8 +37,8 @@
     
     <script>
       mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
-
-    function testAjax() {
+    
+    function dataCaller(){
         return $.ajax({
             type: "GET",
             //YOUR TURN: Replace with csv export link
@@ -51,6 +51,7 @@
             
     }
     
+    //Dichiaro la variabile degli stores per portarla fuori dalla funzione
     var stores = "";
 
     function makeGeoJSON(csvData) {
@@ -68,17 +69,13 @@
             category: 'Category',
             delimiter: ','
         }, function(err, data) {
+            //Popolo la variabile con i dati strutturati
             stores = data;
-            console.log('questi sono i dati ' + data);
         });
-        return geo_json;
     }
     
 
-    var csvData = testAjax().responseText;
-    console.log('questi sono i csv ' + csvData);
-    console.log('questi sono gli stores ' + stores);
-
+    dataCaller();
 
 
         /**
@@ -99,8 +96,6 @@
        */
       stores.features.forEach((store, i) => {
         store.properties.id = i;
-        console.log('faccio for each degli stores');
-
       });
 
       /**
@@ -129,8 +124,6 @@
        * Add a marker to the map for every store listing.
        **/
       function addMarkers() {
-        console.log('aggiungo i puntatori');
-
         /* For each feature in the GeoJSON object above: */
         for (const marker of stores.features) {
           /* Create a div element for the marker. */
@@ -138,13 +131,15 @@
           /* Assign a unique `id` to the marker. */
           el.id = `marker-${marker.properties.id}`;
           /* Assign the `marker` class to each marker for styling. */
-          el.className = 'marker';
+          el.className = `marker`;
+          el.style.cssText = `background-image: url('./img/marker-${marker.properties.Category.toLowerCase()}.png');`;
 
           /**
            * Create a marker using the div element
            * defined above and add it to the map.
            **/
-          new mapboxgl.Marker(el, { offset: [0, -23] })
+
+          new mapboxgl.Marker(el, { offset: [1, 0] })
             .setLngLat(marker.geometry.coordinates)
             .addTo(map);
 
@@ -191,13 +186,13 @@
           link.href = '#';
           link.className = 'title';
           link.id = `link-${properties.id}`;
-          link.innerHTML = `${properties.address}`;
+          link.innerHTML = `${properties.Name}`;
 
           /* Add details to the individual listing. */
           const details = listing.appendChild(document.createElement('div'));
-          details.innerHTML = `${properties.city}`;
-          if (properties.phone) {
-            details.innerHTML += ` &middot; ${properties.phoneFormatted}`;
+          details.innerHTML = `${properties.Category}<br>${properties.Address}`;
+          if (properties.Phone) {
+            details.innerHTML += ` &middot; ${properties.Phone}`;
           }
 
           /**
@@ -243,7 +238,7 @@
         const popup = new mapboxgl.Popup({ closeOnClick: false })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
-            `<h3>Sweetgreen</h3><h4>${currentFeature.properties.address}</h4>`
+            `<h3>${currentFeature.properties.Name}</h3><h4>${currentFeature.properties.Address}</h4>`
           )
           .addTo(map);
       }
