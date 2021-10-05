@@ -24,6 +24,7 @@
             province: 'State_Province',
             zip: 'Zip_code',
             country: 'Country',
+            description: 'Short_description',
             latfield: 'Latitude',
             lonfield: 'Longitude',
             phone: 'Phone',
@@ -197,12 +198,13 @@
       function createPopUp(currentFeature) {
         const popUps = document.getElementsByClassName('mapboxgl-popup');
         if (popUps[0]) popUps[0].remove();
-        const popup = new mapboxgl.Popup({ closeOnClick: false })
+        const popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
             `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
-            <h4 id='pop-up-description'>${currentFeature.properties.Address}</h4>`
+            <h4 id='pop-up-description'>${currentFeature.properties.Address}</h4>
+            <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>`
           )
           .addTo(map);
       }
