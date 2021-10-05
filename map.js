@@ -1,4 +1,4 @@
-mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
     
     function dataCaller(){
         return $.ajax({
@@ -200,7 +200,9 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0O
         const popup = new mapboxgl.Popup({ closeOnClick: false })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
-            `<h3>${currentFeature.properties.Name}</h3><h4>${currentFeature.properties.Address}</h4>`
+            `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
+            <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
+            <h4 id='pop-up-description'>${currentFeature.properties.Address}</h4>`
           )
           .addTo(map);
       }
