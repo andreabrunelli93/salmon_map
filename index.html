@@ -53,8 +53,14 @@
     
     <script>
       function openNav() {
+        var width = window.innerWidth
+        if( width > 600 ){
         document.getElementById("mySidebar").style.width = "33%";
         document.getElementById("main").style.marginLeft = "33%";
+        } else{
+          document.getElementById("mySidebar").style.width = "100%";
+          document.getElementById("main").style.marginLeft = "100%";
+        }
       }
       
       function closeNav() {
