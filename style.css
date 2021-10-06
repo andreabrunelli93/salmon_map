@@ -20,7 +20,7 @@ body {
     width: 100%;
     top: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: -100;
   }
 
   h1 {
@@ -48,6 +48,8 @@ body {
 
   #pop-up-description{
     font-size: 14px;
+    padding: 10px;
+    border-radius: 3px 3px 0 0;
   }
 
   a {
@@ -119,6 +121,7 @@ body {
     cursor: pointer;
     height: 32px;
     width: 32px;
+    opacity: 0.8;
     /*background-image: url('./img/marker-bar.png');*/
   }
 

@@ -34,13 +34,13 @@
   <body>
 
     <div id="map" class="map"></div>
-    <div id="main container">
+    <div id="main" class="container">
       <button class="openbtn" onclick="openNav()">☰ Open Sidebar</button>  
     </div>
     <div id = "mySidebar" class="sidebar row">
 
-      <div class=" heading col-md-12">
-        <div class="col-md-12">
+      <div class=" heading col-md-12 col-xs-12">
+        <div class="col-md-12 col-xs-12">
           <h1>Salmon DigiMap</h1>
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
         </div>
@@ -50,28 +50,9 @@
         <div id="listings" class="listings col-md-12"></div>
    
     </div>
-    
-    <script>
-      function openNav() {
-        var width = window.innerWidth
-        if( width > 600 ){
-        document.getElementById("mySidebar").style.width = "33%";
-        document.getElementById("main").style.marginLeft = "33%";
-        } else{
-          document.getElementById("mySidebar").style.width = "100%";
-          document.getElementById("main").style.marginLeft = "100%";
-        }
-      }
-      
-      function closeNav() {
-        document.getElementById("mySidebar").style.width = "0";
-        document.getElementById("main").style.marginLeft= "0";
-      }
-      </script>
 
     <script src="./map.js"></script>
 
 
   </body>
 </html>
-%

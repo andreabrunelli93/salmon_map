@@ -40,6 +40,21 @@
 
     dataCaller();
 
+    function openNav() {
+      var width = window.innerWidth
+      if( width > 600 ){
+        document.getElementById("mySidebar").style.width = "33%";
+        document.getElementById("main").style.marginLeft = "33%";
+        } else{
+        document.getElementById("mySidebar").style.width = "100vw";
+        document.getElementById("main").style.marginLeft = "100vw";
+      }
+    }
+    
+    function closeNav() {
+      document.getElementById('mySidebar').style.width = "0px";
+      document.getElementById('main').style.marginLeft= "0px";
+    }
 
         /**
        * Add the map to the page
