@@ -90,15 +90,55 @@ body {
 
   /* LIST STYLE */
 
+  .card-title, .card-text, .card-subtitle{
+    margin-bottom: 4px;
+    color: #0e1013;
+  }
+
+  .badge span {
+    background-color: #445e5a;
+    width: 120px;
+    height: 25px;
+    padding: 0x 3px 0px 3px;
+    border-radius: 5px;
+    display: flex;
+    color: #fed85d;
+    justify-content: center;
+    align-items: center;
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  .card {
+    border: none;
+    border-radius: 10px
+  }
+
+  .c-details span {
+    color: whitesmoke;
+    font-weight: 300;
+    font-size: 13px
+  }
+
+  .text1 {
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 600
+}
+
+  .text2 {
+      color: #a5aec0
+  }
+
   .listings .item  {
-      background-color: #414141;
-      color: #ababab;
-      padding: 2% 0 2% 15%;
+      background-color: transparent;
+      border: 1px solid whitesmoke;
+      border-radius: 10px;
+      color: transparent;
       margin: 2% 0 2% 8%;
   }
   @media screen and (max-width: 600px) {
     .listings .item {
-      padding: 2% 0 2% 2%;
       margin: 2% 0 2% 2%;
     }
   }
