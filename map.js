@@ -109,7 +109,7 @@
           /* Assign a unique `id` to the marker. */
           el.id = `marker-${marker.properties.id}`;
           /* Assign the `marker` class to each marker for styling. */
-          el.className = `marker`;
+          el.className = `marker ${marker.properties.Category.toLowerCase()}`;
           el.style.cssText = `background-image: url('./img/marker-${marker.properties.Category.toLowerCase()}.png');`;
 
           /**
