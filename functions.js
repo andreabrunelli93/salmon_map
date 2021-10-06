@@ -31,3 +31,4 @@ var $btns = $('.btn').click(function() {
       }
     }
   }
+

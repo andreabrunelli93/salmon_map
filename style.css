@@ -75,6 +75,7 @@ body {
   .filter-btn{
     border: 1px solid whitesmoke;
     color: whitesmoke;
+    width: 30%;
   }
 
   /* SEARCH BAR */
@@ -82,7 +83,7 @@ body {
   #myInput{
     margin-top: 5px;
     margin-bottom: 15px;
-    width: 80%;
+    width: 90%;
     align-items: left;
   }
   
@@ -102,13 +103,14 @@ body {
     }
   }
 
+  /*
   .bar{
     border-width: 2px;
     border-style: solid;
     border-image: linear-gradient(to right, red, #445e5a) 1;  
     border-radius: 5%;
   }
-
+  */
   .listings .item .title {
       font-size: 1.4 em;
       color: #fff;
