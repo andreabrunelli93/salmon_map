@@ -157,12 +157,12 @@
           /* Assign a unique `id` to the listing. */
           listing.id = `listing-${properties.id}`;
           /* Assign the `item` class to each listing for styling. */
-          listing.className = 'item';
+          listing.className = `item ${properties.Category.toLowerCase()}`;
 
           /* Add the link to the individual listing created above. */
           const link = listing.appendChild(document.createElement('a'));
           link.href = '#';
-          link.className = 'title';
+          link.className = `title`;
           link.id = `link-${properties.id}`;
           link.innerHTML = `${properties.Name}`;
 
