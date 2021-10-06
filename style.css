@@ -63,12 +63,11 @@ body {
 
   .heading {
     background: #fff;
-    border-bottom: 1px solid #eee;
     min-height: 60px;
     line-height: 60px;
     background-color: #445e5a;
     color: #fff;
-    padding: 16px 0 16px 50px;
+    padding: 2% 0 2% 10%;
     }
 
   /* FILTERS */
@@ -93,8 +92,14 @@ body {
   .listings .item  {
       background-color: #414141;
       color: #ababab;
-      padding: 16px 0 16px 100px;
-      margin: 16px 0 16px 32px;
+      padding: 2% 0 2% 15%;
+      margin: 2% 0 2% 8%;
+  }
+  @media screen and (max-width: 600px) {
+    .listings .item {
+      padding: 2% 0 2% 2%;
+      margin: 2% 0 2% 2%;
+    }
   }
 
   .bar{
