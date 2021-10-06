@@ -226,7 +226,7 @@
           .setHTML(
             `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
-            <h4 id='pop-up-description'><a href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}', target='_blank'><i class="fas fa-camera"></i> ${currentFeature.properties.Address}</a></h4>
+            <h4 id='pop-up-description'><a href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}', target='_blank'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</a></h4>
             <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>`
           )
           .addTo(map);
