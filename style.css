@@ -66,18 +66,27 @@ body {
     border-bottom: 1px solid #eee;
     min-height: 60px;
     line-height: 60px;
-    padding: 0 10px;
     background-color: #445e5a;
     color: #fff;
-  }
+    padding: 16px 0 16px 50px;
+    }
 
   /* FILTERS */
 
   .filter-btn{
-    border-radius: 5%;
     border: 1px solid whitesmoke;
-    text-decoration: whitesmoke;
+    color: whitesmoke;
   }
+
+  /* SEARCH BAR */
+
+  #myInput{
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 80%;
+    align-items: left;
+  }
+  
 
   /* LIST STYLE */
 
@@ -91,9 +100,8 @@ body {
   .bar{
     border-width: 2px;
     border-style: solid;
-    border-image: linear-gradient(to right, red, #445e5a) 1;
+    border-image: linear-gradient(to right, red, #445e5a) 1;  
     border-radius: 5%;
-
   }
 
   .listings .item .title {
@@ -112,10 +120,19 @@ body {
   .listings .item .title small {
     font-weight: 400;
   }
-  .listings .item.active .title,
+  .listings .item.active .title {
+    color: #445e5a;
+  }
+
   .listings .item .title:hover {
     color: #fff102;
   }
+
+  .listings .item.active .title:hover {
+    color: #445e5a;
+  }
+
+
   .listings .item.active {
     background-color: #f8f8f8;
   }
