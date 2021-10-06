@@ -1,6 +1,6 @@
 body {
     color: #404040;
-    font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
+    font: 400 15px/22px 'Source Sans Pro', 'Roboto';
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -38,7 +38,7 @@ body {
   #pop-up-category{
     font-size: 14px;
     padding: 0px;
-    background: #91c949;
+    background: #445e5a;
     color: #fff;
     margin: -15px 0 0;
     padding: 10px;
@@ -67,29 +67,46 @@ body {
     min-height: 60px;
     line-height: 60px;
     padding: 0 10px;
-    background-color: #00853e;
+    background-color: #445e5a;
     color: #fff;
+  }
+
+  /* FILTERS */
+
+  .filter-btn{
+    border-radius: 5%;
+    border: 1px solid whitesmoke;
+    text-decoration: whitesmoke;
+  }
+
+  /* LIST STYLE */
+
+  .listings .item  {
+      background-color: #414141;
+      color: #ababab;
+      padding: 16px 0 16px 100px;
+      margin: 16px 0 16px 32px;
+  }
+
+  .bar{
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to right, red, #445e5a) 1;
+    border-radius: 5%;
+
+  }
+
+  .listings .item .title {
+      font-size: 1.4 em;
+      color: #fff;
   }
 
   .listings {
     height: 100%;
     overflow: auto;
     padding-bottom: 60px;
-  }
-
-  .listings .item {
-    border-bottom: 1px solid #eee;
-    padding: 10px;
-    text-decoration: none;
-  }
-
-  .listings .item:last-child {
-    border-bottom: none;
-  }
-  .listings .item .title {
-    display: block;
-    color: #00853e;
-    font-weight: 700;
+    background-color: #0e1013;
+    font-family: Helvetica, Arial, sans-serif;
   }
 
   .listings .item .title small {
@@ -97,7 +114,7 @@ body {
   }
   .listings .item.active .title,
   .listings .item .title:hover {
-    color: #8cc63f;
+    color: #fff102;
   }
   .listings .item.active {
     background-color: #f8f8f8;
@@ -112,7 +129,7 @@ body {
     background: none;
   }
   ::-webkit-scrollbar-thumb {
-    background: #00853e;
+    background: #445e5a;
     border-radius: 0;
   }
 
@@ -140,7 +157,7 @@ body {
   }
 
   .mapboxgl-popup-content h3 {
-    background: #91c949;
+    background: #445e5a;
     color: #fff;
     margin: -15px 0 0;
     padding: 10px;
@@ -163,5 +180,6 @@ body {
   }
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-tip {
-    border-bottom-color: #91c949;
+    border-bottom-color: #445e5a;
   }
+
