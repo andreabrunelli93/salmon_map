@@ -39,10 +39,10 @@
     
 
     dataCaller();
+    var screen_width = window.innerWidth
 
     function openNav() {
-      var width = window.innerWidth
-      if( width > 600 ){
+      if( screen_width > 600 ){
         document.getElementById("mySidebar").style.width = "33%";
         document.getElementById("main").style.marginLeft = "33%";
         } else{
@@ -183,6 +183,10 @@
           link.addEventListener('click', function () {
             for (const feature of features) {
               if (this.id === `link-${feature.properties.id}`) {
+                console.log(screen_width)
+                if(screen_width < 600){
+                  closeNav();
+                }
                 flyToStore(feature);
                 createPopUp(feature);
               }
