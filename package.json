@@ -2,14 +2,15 @@
   "name": "salmon_map",
   "version": "1.0.0",
   "description": "��#\u0000 \u0000s\u0000a\u0000l\u0000m\u0000o\u0000n\u0000_\u0000m\u0000a\u0000p\u0000\r\u0000 \u0000",
-  "main": "map.js",
+  "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
-    "csv2geojson": "^5.1.1"
+    "csv2geojson": "^5.1.1",
+    "express": "^4.16.4"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node index.html"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
