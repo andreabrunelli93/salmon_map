@@ -29,6 +29,8 @@
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
+    padding: 0px;
+    color: #f1f1f1;
   }
   
   .openbtn {
@@ -53,15 +55,16 @@
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   @media screen and (max-width: 600px) {
     .sidebar {
-        padding-top: 15px;
         width: 100%;
     }
     .sidebar a {font-size: 18px;}
+    #mySidebar{
+        margin-left: 0px;
+    }
   }
 
   @media screen and (min-width: 601px) {
     .sidebar {
-        padding-top: 15px;
         width: 33%;
     }
   }
