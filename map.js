@@ -217,12 +217,16 @@
       function createPopUp(currentFeature) {
         const popUps = document.getElementsByClassName('mapboxgl-popup');
         if (popUps[0]) popUps[0].remove();
+
+        var place_name = currentFeature.properties.Name;
+        var google_maps_query_name = place_name.split(' ').join('+');
+
         const popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
             `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
-            <h4 id='pop-up-description'>${currentFeature.properties.Address}</h4>
+            <h4 id='pop-up-description'><a href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}', target='_blank'>${currentFeature.properties.Address}</a></h4>
             <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>`
           )
           .addTo(map);
