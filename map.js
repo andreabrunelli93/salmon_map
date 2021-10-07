@@ -167,11 +167,13 @@
           link.className = `title`;
           link.id = `link-${properties.id}`;
           link.innerHTML = `<div class="col-md-12" id="link-${properties.id}">
-
-                  <h3 class="card-tile" id="special-font">${properties.Name}</h3>
-                  <div class="badge"> <span>${properties.Category}</span> </div>
-                      <div class="mt-3"> <span class="text1">${properties.Address} | ${properties.Phone} </span> </div>
-
+              <div class="row"> 
+                  <div class="col-md-8"><h3 class="card-tile" id="special-font">${properties.Name}</h3></div>
+                  <div class="col-md-4"><div class="badge"> <span>${properties.Category}</span> </div></div>
+              </div>
+              <div class="row">
+                  <div class="col-md-12"><span class="text1">${properties.Address} | ${properties.Phone} </span></div>
+              </div>
               </div>`
 
           /*
