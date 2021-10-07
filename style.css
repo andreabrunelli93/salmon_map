@@ -106,7 +106,7 @@ body {
     padding: 0x 3px 0px 3px;
     border-radius: 5px;
     display: flex;
-    color: #fed85d;
+    color: whitesmoke;
     justify-content: center;
     align-items: center;
     font-weight: 300;
@@ -132,6 +132,11 @@ body {
 
   .text2 {
       color: #a5aec0
+  }
+
+  #special-font{
+    font-family: 'Bungee Shade', Sans-serif; 
+    font-weight: 300;
   }
 
   .listings .item  {
@@ -170,7 +175,8 @@ body {
   .listings .item .title small {
     font-weight: 400;
   }
-  .listings .item.active .title {
+  .listings .item.active .title .text1,
+  .listings .item.active .title #special-font {
     color: #445e5a;
   }
 
