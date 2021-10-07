@@ -1,3 +1,5 @@
+  /* CATEGORY FILTER */
+
 var $btns = $('.btn').click(function() {
     if (this.id == 'all') {
       $('#listings > div').fadeIn(450);
@@ -11,7 +13,7 @@ var $btns = $('.btn').click(function() {
     $(this).addClass('active');
   });
 
-
+  /* TEXT SEARCH */
   function textFilter() {
     // Declare variables
     var input, filter, ul, li, a, i, txtValue;
@@ -33,3 +35,13 @@ var $btns = $('.btn').click(function() {
   }
 
 
+    /* HEADER COMPRESS */
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+        document.getElementById("mySidebar").style.fontSize = "30px";
+      } else {
+        document.getElementById("mySidebar").style.fontSize = "90px";
+      }
+    }

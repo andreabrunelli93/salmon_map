@@ -48,10 +48,28 @@
   .openbtn:hover {
     background-color: #444;
   }
+
+  #closeNav{
+      transform: translate(0, -50%);
+  }
   
   #main {
     transition: margin-left .5s;
     padding: 16px;
+  }
+
+  #main-title{
+    font-family: 'Bungee Shade', Sans-serif; 
+    font-weight: 900; 
+    font-size: 200%; 
+    text-align: center; 
+    margin-left: -30px; 
+    line-height: 1;
+    text-align: center;
+  }
+
+  #logo-salmon{
+    width: 50%;
   }
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
@@ -63,6 +81,17 @@
 
     .sidebar{
         margin-left: 0px;
+    }
+    #closeNav{
+        transform: translate(0, -50%);
+        top: -50px;
+        right: 5px;
+    }
+    #logo-salmon{
+        width: 0%;
+    }
+    #heading{
+        margin-top: -10%;
     }
   }
 

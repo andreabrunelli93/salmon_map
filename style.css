@@ -68,7 +68,11 @@ body {
     background-color: #445e5a;
     color: #fff;
     padding: 2% 0 2% 10%;
+    transition: 0.2s;
     }
+
+  /* HEADER STICKER */
+
 
   /* FILTERS */
 
