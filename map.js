@@ -168,22 +168,9 @@
           link.id = `link-${properties.id}`;
           link.innerHTML = `<div class="col-md-12" id="link-${properties.id}">
 
-              <div class="d-flex justify-content-between">
-                  <div class="d-flex flex-row align-items-center">
-                      <div class="icon"> <i class="bx bxl-mailchimp"></i> </div>
-                      <div class="ms-2 c-details">
-                          <h6 class="mb-0">${properties.Address}</h6> <span>${properties.Phone}</span>
-                      </div>
-                  </div>
-                  
-                <div class="badge"> <span>${properties.Category}</span> </div>
-              </div>
-              <div class="mt-5">
-                  <h3 class="heading">${properties.Name}</h3>
-              <div class="mt-5">
-                      <div class="mt-3"> <span class="text1">${properties.Address}</span> </div>
-                  </div>
-              </div>
+                  <h3 class="card-tile">${properties.Name}</h3>
+                  <div class="badge"> <span>${properties.Category}</span> </div>
+                      <div class="mt-3"> <span class="text1">${properties.Address} | ${properties.Phone} </span> </div>
 
               </div>`
 

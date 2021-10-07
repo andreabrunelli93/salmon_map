@@ -95,6 +95,12 @@ body {
     color: #0e1013;
   }
 
+  .card-title{
+    font-size: 14px;
+    font-weight: 400;
+
+  }
+
   .badge span {
     background-color: #445e5a;
     width: 120px;
@@ -117,7 +123,7 @@ body {
   .c-details span {
     color: whitesmoke;
     font-weight: 300;
-    font-size: 13px
+    font-size: 13px;
   }
 
   .text1 {
@@ -135,7 +141,7 @@ body {
       border: 1px solid whitesmoke;
       border-radius: 10px;
       color: transparent;
-      margin: 2% 0 2% 8%;
+      margin: 4% 4% 2% 8%;
   }
   @media screen and (max-width: 600px) {
     .listings .item {
