@@ -168,7 +168,7 @@
           link.id = `link-${properties.id}`;
           link.innerHTML = `<div class="col-md-12" id="link-${properties.id}">
 
-                  <h3 class="card-tile">${properties.Name}</h3>
+                  <h3 class="card-tile" style="font-family: 'Bungee Shade', Sans-serif; font-weight: 500;>${properties.Name}</h3>
                   <div class="badge"> <span>${properties.Category}</span> </div>
                       <div class="mt-3"> <span class="text1">${properties.Address} | ${properties.Phone} </span> </div>
 

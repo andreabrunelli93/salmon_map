@@ -1,6 +1,6 @@
 body {
     color: #404040;
-    font: 400 15px/22px 'Source Sans Pro', 'Roboto';
+    font: 400 15px/22px 'Roboto Condensed', sans-serif;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: antialiased;
@@ -97,8 +97,6 @@ body {
 
   .card-title{
     font-size: 14px;
-    font-weight: 400;
-
   }
 
   .badge span {
@@ -167,7 +165,6 @@ body {
     overflow: auto;
     padding-bottom: 60px;
     background-color: #0e1013;
-    font-family: Helvetica, Arial, sans-serif;
   }
 
   .listings .item .title small {
