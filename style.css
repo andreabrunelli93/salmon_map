@@ -100,13 +100,13 @@ body {
   }
 
   .badge span {
-    background-color: #445e5a;
+    background-color: #f7daa6;
     width: 120px;
     height: 25px;
     padding: 0x 3px 0px 3px;
     border-radius: 5px;
     display: flex;
-    color: whitesmoke;
+    color: #0e1013;
     justify-content: center;
     align-items: center;
     font-weight: 300;
@@ -135,7 +135,7 @@ body {
   }
 
   #special-font{
-    font-family: 'Bungee Shade', Sans-serif; 
+    font-family: 'Roboto Condensed', sans-serif; 
     font-weight: 300;
   }
 
@@ -181,7 +181,7 @@ body {
   }
 
   .listings .item .title:hover {
-    color: #fff102;
+    color: #f7daa6;
   }
 
   .listings .item.active .title:hover {
