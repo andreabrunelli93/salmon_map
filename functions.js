@@ -1,6 +1,6 @@
   /* CATEGORY FILTER */
 
-var $btns = $('.btn').click(function() {
+  var $btns = $('.btn').click(function () {
     if (this.id == 'all') {
       $('#listings > div').fadeIn(450);
       $('.mapboxgl-canvas-container > div').fadeIn(450)
@@ -21,7 +21,7 @@ var $btns = $('.btn').click(function() {
     filter = input.value.toUpperCase();
     ul = document.getElementById("listings");
     li = ul.getElementsByClassName('item');
-  
+
     // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
       a = li[i].getElementsByTagName("a")[0];
@@ -34,14 +34,34 @@ var $btns = $('.btn').click(function() {
     }
   }
 
+  document.querySelector("#listings").onscroll = function () {
+    scrollFunction();
+  };
 
-    /* HEADER COMPRESS */
-    window.onscroll = function() {scrollFunction()};
-
-    function scrollFunction() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        document.getElementById("mySidebar").style.fontSize = "30px";
-      } else {
-        document.getElementById("mySidebar").style.fontSize = "90px";
-      }
+  function scrollFunction() {
+    $header = $(".header");
+    $content = $("#expand-contract")
+    if (document.querySelector("#listings").scrollTop > 80 || document.querySelector("#listings").scrollTop > 80) {
+      console.log('sono nell if');
+      $content.slideToggle(500, function () {
+        $header.text(function () {
+          return $content.is(":visible") ? "Collapse" : "Collapse";
+        });
+      });
+    } else {
+      $content.slideToggle(500, function () {
+        $header.text(function () {
+          return $content.is(":visible") ? "Expand" : "Expand";
+        });
+      });
     }
+  }
+  /*
+    function scrollFunction() {
+
+      $content.slideToggle(500, function () {
+          $header.text(function () {
+              return $content.is(":visible") ? "Collapse" : "Expand";
+          });
+      });
+  };*/

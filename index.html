@@ -1,95 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Salmon DigiMap</title>
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700"
-      rel="stylesheet"
-    />
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
-    <link
-      href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
 
-    <!-- BOOTSTRAP -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<head>
+  <meta charset="utf-8" />
+  <title>Salmon DigiMap</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.5.0/mapbox-gl.css" rel="stylesheet" />
 
-    <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
-    <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
-    <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
+  <!-- BOOTSTRAP -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 
-    <!-- FONT AWESOME -->
-    <script defer src="node_modules\@fortawesome\fontawesome-free\js\brands.js"></script>
-    <script defer src="node_modules\@fortawesome\fontawesome-free\js\solid.js"></script>
-    <script defer src="node_modules\@fortawesome\fontawesome-free\js\fontawesome.js"></script>
+  <script src='https://npmcdn.com/csv2geojson@latest/csv2geojson.js'></script>
+  <script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+  <script src="https://npmcdn.com/csv2geojson@latest/csv2geojson.js"></script>
 
-    <!-- FONT -->
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
-    </style>
-    <style>
-      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap');
-    </style>
+  <!-- FONT AWESOME -->
+  <script defer src="node_modules\@fortawesome\fontawesome-free\js\brands.js"></script>
+  <script defer src="node_modules\@fortawesome\fontawesome-free\js\solid.js"></script>
+  <script defer src="node_modules\@fortawesome\fontawesome-free\js\fontawesome.js"></script>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="sidebar.css">
+  <!-- FONT -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap');
+  </style>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+  </style>
 
-    <link rel="icon" href="img/salmon_logo_salmon_white.png">
-  </head>
-  <body>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="sidebar.css">
 
-    <div id="map" class="map"></div>
-    <div id="main" class="container">
-      <button class="openbtn" style="font-family: 'Bungee Shade', Sans-serif; font-weight: 500;" onclick="openNav()">☰ Menu</button>  
-    </div>
-    <div id = "mySidebar" class="sidebar row">
-      
-      <div class=" heading col-md-12 col-xs-12" id="heading">
-        <div class="row align-items-center" style="margin-bottom: 2%; width: 100%">
-          <div class="col-md-3 col-xs-3 align-items-center"><img src="img/salmon_logo_salmon_white.png" alt="" id="logo-salmon"></div>
-          <div class="col-md-7 col-xs-7" ><h1 id="main-title">Salmon DigiMap</h1></div>
-          <div class="col-md-2 col-xs-2"><a id="closeNav" href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a></div>
+  <link rel="icon" href="img/salmon_logo_salmon_white.png">
+</head>
+
+<body>
+
+  <div id="map" class="map"></div>
+  <div id="main" class="container">
+    <button class="openbtn" style="font-family: 'Bungee Shade', Sans-serif; font-weight: 500;" onclick="openNav()">☰
+      Menu</button>
+  </div>
+  <div id="mySidebar" class="sidebar row">
+
+    <div class=" heading col-md-12 col-xs-12" id="heading">
+      <div class="row align-items-center" style="margin-bottom: 2%; width: 100%">
+        <div class="col-md-3 col-xs-3 align-items-center"><img src="img/salmon_logo_salmon_white.png" alt=""
+            id="logo-salmon"></div>
+        <div class="col-md-7 col-xs-7">
+          <h1 id="main-title">Salmon DigiMap</h1>
         </div>
-        
-        <div class="row align-items-center" style="margin-bottom: 2%;">
-        <button class="btn filter-btn" data-toggle="collapse" href="#filter" role="button" aria-expanded="false" aria-controls="filter" style="width: 90%" >Espandi Filtri</button>
-        <div id='filter' class="content collapse ">
-          
-          <button type="button" class="filter-btn btn alimentari" id='alimentari'>Alimentari</button>
-          <button type="button" class="filter-btn btn galleria" id='galleria'>Galleria</button>
-          <button type="button" class="filter-btn btn bar" id='bar'>Bar</button>
-          <button type="button" class="filter-btn btn ristorante" id='ristorante'>Ristorante</button>
-          <button type="button" class="filter-btn btn street-food" id='street-food'>Street-food</button>
-          <button type="button" class="filter-btn btn cooperativa" id='cooperativa'>Cooperativa</button>
-          <button type="button" class="filter-btn btn osteria" id='osteria'>Osteria</button>
-          <button type="button" class="filter-btn btn cantina" id='cantina'>Cantina</button>
-          <button type="button" class="filter-btn btn abbigliamento" id='abbigliamento'>Abbigliamento</button>
-          <button type="button" class="filter-btn btn artigiano" id='artigiano'>Artigiano</button>
+        <div class="col-md-2 col-xs-2"><a id="closeNav" href="javascript:void(0)" class="closebtn"
+            onclick="closeNav()">×</a></div>
+      </div>
+      <div id="expand-container">
+        <div class="expanded" id="expand-contract">
+          <div class="row align-items-center" style="margin-bottom: 2%;">
+            <button class="btn filter-btn" data-toggle="collapse" href="#filter" role="button" aria-expanded="false"
+              aria-controls="filter" style="width: 90%">Espandi Filtri</button>
+            <div id='filter' class="content collapse ">
 
-          <button type="button" class="filter-btn btn all" id='all'>Reset</button>
+              <button type="button" class="filter-btn btn alimentari" id='alimentari'>Alimentari</button>
+              <button type="button" class="filter-btn btn galleria" id='galleria'>Galleria</button>
+              <button type="button" class="filter-btn btn bar" id='bar'>Bar</button>
+              <button type="button" class="filter-btn btn ristorante" id='ristorante'>Ristorante</button>
+              <button type="button" class="filter-btn btn street-food" id='street-food'>Street-food</button>
+              <button type="button" class="filter-btn btn cooperativa" id='cooperativa'>Cooperativa</button>
+              <button type="button" class="filter-btn btn osteria" id='osteria'>Osteria</button>
+              <button type="button" class="filter-btn btn cantina" id='cantina'>Cantina</button>
+              <button type="button" class="filter-btn btn abbigliamento" id='abbigliamento'>Abbigliamento</button>
+              <button type="button" class="filter-btn btn artigiano" id='artigiano'>Artigiano</button>
+
+              <button type="button" class="filter-btn btn all" id='all'>Reset</button>
+            </div>
+          </div>
+          <div class="row align-items-center" style="margin-bottom: 2%;">
+            <input type="search" id="myInput" class="form-control" onkeyup="textFilter()"
+              placeholder="Cerca un posto..">
+          </div>
         </div>
       </div>
-      <div class="row align-items-center" style="margin-bottom: 2%;">
-      <input type="search" id="myInput" class="form-control" onkeyup="textFilter()" placeholder="Cerca un posto..">
     </div>
+    <div id="listings" class="listings col-md-12"></div>
 
-      </div>
+  </div>
 
-        <div id="listings" class="listings col-md-12"></div>
-   
-    </div>
-
-    <script src="./map.js"></script>
-    <script src="./functions.js"></script>
+  <script src="./map.js"></script>
+  <script src="./functions.js"></script>
 
 
-  </body>
+</body>
+
 </html>

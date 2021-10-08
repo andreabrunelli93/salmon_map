@@ -71,8 +71,12 @@ body {
     transition: 0.2s;
     }
 
-  /* HEADER STICKER */
+  /* HEADER COLLAPSE */
 
+  .heading .expanded {
+    display: none;
+    padding : 5px;
+}
 
   /* FILTERS */
 
@@ -87,7 +91,7 @@ body {
   #myInput{
     margin-top: 5px;
     margin-bottom: 15px;
-    width: 90%;
+    width: 92%;
     align-items: left;
   }
   
