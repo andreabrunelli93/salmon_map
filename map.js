@@ -170,11 +170,15 @@
               <div class="row"> 
                   <div class="col-md-8"><h3 class="card-tile" id="special-font">${properties.Name}</h3></div>
                   <div class="col-md-4"><div class="badge"> <span>${properties.Category}</span> </div></div>
-              </div>
-              <div class="row">
-                  <div class="col-md-12"><span class="text1">${properties.Address} | ${properties.Phone} </span></div>
-              </div>
               </div>`
+
+              if(properties.Phone)
+                  {
+                    link.innerHTML += `<div class="row" style="margin-left: 1%"> <div class="col-md-12"><span class="text1">${properties.Address} | ${properties.Phone} </span></div> </div>`;
+                  }
+                  else{
+                    link.innerHTML += `<div class="row" style="margin-left: 1%"> <div class="col-md-12"><span class="text1">${properties.Address} </span></div> </div>`;
+                  }
 
           /*
           link.innerHTML = `${properties.Name}`;
@@ -239,8 +243,10 @@
           .setHTML(
             `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
-            <h4 id='pop-up-description'><a href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}', target='_blank'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</a></h4>
-            <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>`
+            <h4 id='pop-up-description'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</h4>
+            <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>
+            <a class="btn btn-primary" href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}' role="button" id="navigation-button">Apri navigazione</a>
+            `
           )
           .addTo(map);
       }

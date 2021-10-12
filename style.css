@@ -242,6 +242,15 @@ body {
   }
 
   /* Marker tweaks */
+
+  #navigation-button{
+    margin-left: 15%;
+    margin-bottom: 5%;
+    font-size: 14px;
+    background-color: #445e5a;
+    border: none;
+  }
+
   .mapboxgl-popup {
     padding-bottom: 50px;
   }

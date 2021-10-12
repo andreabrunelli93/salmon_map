@@ -41,32 +41,3 @@
       $("#expand-contract").addClass('show');
     }
   }
-
-  /*
-  document.querySelector("#listings").onscroll = function () {
-    console.log(document.querySelector("#listings").scrollTop);
-    if(document.querySelector("#listings").scrollTop > 80 && document.getElementById("expand-contract").classList.contains('show'))
-    {
-      $("#expand-contract").toggle(100, function() {
-        console.log('rimuovo show');
-        document.getElementById("expand-contract").classList.remove('show');
-      });
-    }
-    if(document.querySelector("#listings").scrollTop < 80 && !document.getElementById("expand-contract").classList.contains('show'))
-    {
-      $("#expand-contract").toggle(100, function() {
-        console.log('aggiungo show');
-        document.getElementById("expand-contract").classList.add('show');
-      });
-    }
-  };
-    */
-    /*
-
-        if (document.querySelector("#listings").scrollTop > 80 && $('#expand-contract').class) {
-      $('#expand-contract').collapse("toggle");
-      }
-    if (document.querySelector("#listings").scrollTop < 80) {
-    $('#expand-contract').expand("toggle");
-    }
-    */
