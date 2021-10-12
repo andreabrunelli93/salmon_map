@@ -119,7 +119,8 @@ body {
 
   .card-title{
     font-size: 14px;
-  }
+    text-shadow: 2px 2px 0px rgb(255 255 255 / 20%);
+    }
 
   .badge span {
     background-color: #f8f9fa;
@@ -137,7 +138,7 @@ body {
 
   .card {
     border: none;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
   .c-details span {
