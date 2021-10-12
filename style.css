@@ -98,8 +98,17 @@ body {
     margin-bottom: 15px;
     width: 92%;
     align-items: left;
-  }
-  
+    border:none;
+    border-bottom: 1px solid whitesmoke;
+    padding: 5px 10px;
+    outline: none;
+ }
+
+[placeholder]:focus::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease; 
+    text-indent: -100%;
+    opacity: 1;
+ }
 
   /* LIST STYLE */
 
