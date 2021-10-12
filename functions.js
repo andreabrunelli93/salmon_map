@@ -35,33 +35,38 @@
   }
 
   document.querySelector("#listings").onscroll = function () {
-    scrollFunction();
-  };
-
-  function scrollFunction() {
-    $header = $(".header");
-    $content = $("#expand-contract")
-    if (document.querySelector("#listings").scrollTop > 80 || document.querySelector("#listings").scrollTop > 80) {
-      console.log('sono nell if');
-      $content.slideToggle(500, function () {
-        $header.text(function () {
-          return $content.is(":visible") ? "Collapse" : "Collapse";
-        });
-      });
+    if (document.querySelector("#listings").scrollTop > 50 || document.querySelector("#listings").scrollTop > 50) {
+      $("#expand-contract").removeClass('show', 1000);
     } else {
-      $content.slideToggle(500, function () {
-        $header.text(function () {
-          return $content.is(":visible") ? "Expand" : "Expand";
-        });
-      });
+      $("#expand-contract").addClass('show', 1000);
     }
   }
-  /*
-    function scrollFunction() {
 
-      $content.slideToggle(500, function () {
-          $header.text(function () {
-              return $content.is(":visible") ? "Collapse" : "Expand";
-          });
+  /*
+  document.querySelector("#listings").onscroll = function () {
+    console.log(document.querySelector("#listings").scrollTop);
+    if(document.querySelector("#listings").scrollTop > 80 && document.getElementById("expand-contract").classList.contains('show'))
+    {
+      $("#expand-contract").toggle(100, function() {
+        console.log('rimuovo show');
+        document.getElementById("expand-contract").classList.remove('show');
       });
-  };*/
+    }
+    if(document.querySelector("#listings").scrollTop < 80 && !document.getElementById("expand-contract").classList.contains('show'))
+    {
+      $("#expand-contract").toggle(100, function() {
+        console.log('aggiungo show');
+        document.getElementById("expand-contract").classList.add('show');
+      });
+    }
+  };
+    */
+    /*
+
+        if (document.querySelector("#listings").scrollTop > 80 && $('#expand-contract').class) {
+      $('#expand-contract').collapse("toggle");
+      }
+    if (document.querySelector("#listings").scrollTop < 80) {
+    $('#expand-contract').expand("toggle");
+    }
+    */

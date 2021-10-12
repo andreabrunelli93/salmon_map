@@ -73,8 +73,9 @@ body {
 
   /* HEADER COLLAPSE */
 
+
   .heading .expanded {
-    display: none;
+    display: visible;
     padding : 5px;
 }
 
