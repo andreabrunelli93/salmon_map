@@ -33,6 +33,7 @@ body {
 
   #pop-up-title{
     font-size: 20px;
+    border-radius: 10px;
   }
 
   #pop-up-category{
@@ -243,6 +244,7 @@ body {
     font: 400 12px/18px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
     padding: 0;
     width: 180px;
+    border-radius: 10px;
   }
 
   .mapboxgl-popup-content h3 {
