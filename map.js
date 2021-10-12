@@ -236,7 +236,7 @@
         if (popUps[0]) popUps[0].remove();
 
         var place_name = currentFeature.properties.Name;
-        var google_maps_query_name = place_name.split(' ').join('+');
+        var google_maps_query_name = place_name.replace("'"," ").split(' ').join('+');
 
         const popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
@@ -245,7 +245,7 @@
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
             <h4 id='pop-up-description'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</h4>
             <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>
-            <a class="btn btn-primary" href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}' role="button" id="navigation-button">Apri navigazione</a>
+            <a class="btn btn-primary" href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}' role="button" id="navigation-button" target="_blank">Apri navigazione</a>
             `
           )
           .addTo(map);
