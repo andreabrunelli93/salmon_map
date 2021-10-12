@@ -238,7 +238,7 @@ body {
     height: 32px;
     width: 12px;
     max-width: 32px;
-    min-width: 12px;
+    min-width: 3px;
     opacity: 0.8;
     background-repeat: no-repeat;
     background-size: contain;

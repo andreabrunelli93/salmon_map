@@ -45,7 +45,7 @@
   var original_marker_width = $('.marker').width();
 
   map.on('zoomend', (original_marker_width) => {
-    var new_width = 12 + ((map.getZoom() - 13) * 20) ;
+    var new_width = 12 + ((map.getZoom() - 13) * 5) ;
     $('.marker').css("width", new_width);
     console.log('zoom è ' + map.getZoom());
     console.log('il width è ' + new_width);
