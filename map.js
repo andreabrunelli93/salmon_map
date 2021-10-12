@@ -64,7 +64,7 @@
         style: 'mapbox://styles/andreabrunelli93/cku85j8ut571s19rz0t03363w',
         center: [11.002374885021773, 45.443389441640925],
         zoom: 13,
-        scrollZoom: true
+        scrollZoom: true,
       });
       
       /**
@@ -86,7 +86,7 @@
          */
         map.addSource('places', {
           'type': 'geojson',
-          'data': stores
+          'data': stores,
         });
 
         /**
@@ -250,3 +250,4 @@
           )
           .addTo(map);
       }
+

@@ -236,8 +236,14 @@ body {
     border: none;
     cursor: pointer;
     height: 32px;
-    width: 32px;
+    width: 12px;
+    max-width: 32px;
+    min-width: 12px;
     opacity: 0.8;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    transition: width 1s ease-in-out;
     /*background-image: url('./img/marker-bar.png');*/
   }
 
