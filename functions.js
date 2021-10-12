@@ -36,9 +36,9 @@
 
   document.querySelector("#listings").onscroll = function () {
     if (document.querySelector("#listings").scrollTop > 50 || document.querySelector("#listings").scrollTop > 50) {
-      $("#expand-contract").removeClass('show', 1000);
+      $("#expand-contract").removeClass('show');
     } else {
-      $("#expand-contract").addClass('show', 1000);
+      $("#expand-contract").addClass('show');
     }
   }
 

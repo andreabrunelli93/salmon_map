@@ -72,11 +72,14 @@ body {
     }
 
   /* HEADER COLLAPSE */
-
+  #expand-contract{
+    transition: opacity 10s ease-out;
+  }
 
   .heading .expanded {
     display: visible;
     padding : 5px;
+    transition: opacity 1s ease-out;
 }
 
   /* FILTERS */
@@ -109,7 +112,7 @@ body {
   }
 
   .badge span {
-    background-color: #f7daa6;
+    background-color: #f8f9fa;
     width: 120px;
     height: 25px;
     padding: 0x 3px 0px 3px;
@@ -178,7 +181,7 @@ body {
     height: 100%;
     overflow: auto;
     padding-bottom: 60px;
-    background-color: #0e1013;
+    background-color: #31413f;
   }
 
   .listings .item .title small {
@@ -187,6 +190,10 @@ body {
   .listings .item.active .title .text1,
   .listings .item.active .title #special-font {
     color: #445e5a;
+  }
+
+  .listings .item.active .badge span{
+    background-color: #f7daa6;
   }
 
   .listings .item .title:hover {
