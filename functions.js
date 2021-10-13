@@ -34,13 +34,23 @@
     }
   }
 
+  /* HEADER SHRINK */
+
+  var list_position = document.querySelector("#listings").scrollTop;
+
   document.querySelector("#listings").onscroll = function () {
-    if (document.querySelector("#listings").scrollTop > 50 || document.querySelector("#listings").scrollTop > 50) {
+    if (document.querySelector("#listings").scrollTop > list_position) {
       $("#expand-contract").removeClass('show');
-    } else {
+      list_position = document.querySelector("#listings").scrollTop;
+    } 
+    if(document.querySelector("#listings").scrollTop < list_position) {
       $("#expand-contract").addClass('show');
+      list_position = document.querySelector("#listings").scrollTop;
     }
   }
+
+
+  /* MARKER ZOOM ICONS */
 
   var original_marker_width = $('.marker').width();
 
