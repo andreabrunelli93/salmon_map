@@ -1,4 +1,6 @@
-      mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
+
+    
+    mapboxgl.accessToken = 'pk.eyJ1IjoiYW5kcmVhYnJ1bmVsbGk5MyIsImEiOiJja3U4M3g4NDM0OHo5MnJxdG9sMmdqN3JtIn0.FKig19QeFQyFzGzFAcqaUw';
     
     function dataCaller(){
         return $.ajax({
@@ -213,7 +215,6 @@
           link.addEventListener('click', function () {
             for (const feature of features) {
               if (this.id === `link-${feature.properties.id}`) {
-                console.log(screen_width)
                 if(screen_width < 600){
                   closeNav();
                 }
