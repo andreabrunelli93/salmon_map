@@ -31,6 +31,10 @@ body {
     padding: 20px 2px;
   }
 
+  .mapboxgl-ctrl-top-right{
+    padding: 10px 15px;
+  }
+
   #pop-up-title{
     font-size: 20px;
     border-radius: 10px;
