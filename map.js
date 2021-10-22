@@ -45,10 +45,10 @@
     var screen_width = window.innerWidth
 
     function openNav() {
-      if( screen_width > 600 ){
+      if( screen_width > 800 ){
         document.getElementById("mySidebar").style.width = "33%";
         document.getElementById("main").style.marginLeft = "33%";
-        } else{
+        } else {
         document.getElementById("mySidebar").style.width = "100vw";
         document.getElementById("main").style.marginLeft = "100vw";
       }

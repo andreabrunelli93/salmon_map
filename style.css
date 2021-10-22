@@ -127,7 +127,7 @@ body {
 
   .badge span {
     background-color: #f8f9fa;
-    width: 120px;
+    width: 100px;
     height: 25px;
     padding: 0x 3px 0px 3px;
     border-radius: 5px;
@@ -136,7 +136,7 @@ body {
     justify-content: center;
     align-items: center;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .card {
@@ -173,7 +173,7 @@ body {
       color: transparent;
       margin: 4% 4% 2% 8%;
   }
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .listings .item {
       margin: 2% 0 2% 2%;
     }
@@ -209,6 +209,7 @@ body {
 
   .listings .item.active .badge span{
     background-color: #f7daa6;
+
   }
 
   .listings .item .title:hover {

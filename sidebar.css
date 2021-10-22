@@ -78,7 +78,7 @@
   
   
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
     .sidebar {
         width: 0%;
     }
