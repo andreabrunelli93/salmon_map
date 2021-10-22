@@ -81,6 +81,9 @@
           showUserHeading: true
           })
         );
+
+      // Add zoom and rotation controls to the map.
+      map.addControl(new mapboxgl.NavigationControl());
       
       /**
        * Assign a unique id to each store. You'll use this `id`
