@@ -258,7 +258,8 @@
         const popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
-            `<h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
+            `<button type="button" class="close-button-popup btn-close" id="close-button-popup" aria-label="Close">X</button>
+            <h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
             <h4 id='pop-up-description'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</h4>
             <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>
@@ -268,3 +269,8 @@
           .addTo(map);
       }
 
+
+      /* CLOSE POPUP BUTTON */
+      $(document).on("click", "#close-button-popup", function() {
+        $(".mapboxgl-popup").remove();
+      });

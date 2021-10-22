@@ -304,3 +304,13 @@ body {
     border-bottom-color: #445e5a;
   }
 
+  .close-button-popup{
+    position: absolute;
+    right: 0;
+    border: solid white 3px;
+    border-radius: 10px;
+    color: #31413f;
+    font-weight: bold;
+    margin-top: -25px;
+    margin-right: -12px;
+  }

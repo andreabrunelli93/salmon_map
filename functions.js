@@ -60,3 +60,6 @@
     console.log('zoom è ' + map.getZoom());
     console.log('il width è ' + new_width);
     });
+
+
+
