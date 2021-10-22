@@ -53,7 +53,6 @@ body {
 
   #pop-up-description{
     font-size: 14px;
-    padding: 10px;
     border-radius: 3px 3px 0 0;
   }
 
@@ -256,7 +255,7 @@ body {
   /* Marker tweaks */
 
   #navigation-button{
-    margin-left: 15%;
+    margin-left: 25%;
     margin-bottom: 5%;
     font-size: 14px;
     background-color: #445e5a;
@@ -273,7 +272,7 @@ body {
   .mapboxgl-popup-content {
     font: 400 12px/18px 'Source Sans Pro', 'Helvetica Neue', sans-serif;
     padding: 0;
-    width: 180px;
+    width: 250px;
     border-radius: 10px;
   }
 
@@ -294,6 +293,8 @@ body {
 
   .mapboxgl-popup-content div {
     padding: 10px;
+    padding-top: 0px;
+    padding-bottom: 5px;
   }
 
   .mapboxgl-popup-anchor-top > .mapboxgl-popup-content {
@@ -307,10 +308,33 @@ body {
   .close-button-popup{
     position: absolute;
     right: 0;
-    border: solid white 3px;
     border-radius: 10px;
-    color: #31413f;
+    color: whitesmoke;
     font-weight: bold;
-    margin-top: -25px;
-    margin-right: -12px;
+    margin-top: -6px;
+    margin-right: 8px;
+    background-color: transparent;
   }
+
+  .nav-item{
+    width: 50%;
+    text-align: center;
+  }
+
+  .nav-link{
+    border-radius: 0.25rem;
+  }
+
+  .nav-pills .nav-link.active, 
+  .nav-pills .show > .nav-link
+  {
+    background-color: #445e5a;
+    color: whitesmoke;
+    border-radius: 0.25rem;
+  }
+
+  .nav{
+    width: 100%;
+    padding: 5px;
+  }
+

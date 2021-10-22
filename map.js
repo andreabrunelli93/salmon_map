@@ -26,7 +26,8 @@
             province: 'State_Province',
             zip: 'Zip_code',
             country: 'Country',
-            description: 'Short_description',
+            ita_description: 'Ita_description',
+            en_description: 'En_description',
             latfield: 'Latitude',
             lonfield: 'Longitude',
             phone: 'Phone',
@@ -258,11 +259,28 @@
         const popup = new mapboxgl.Popup({ closeOnClick: true })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
-            `<button type="button" class="close-button-popup btn-close" id="close-button-popup" aria-label="Close">X</button>
+            `<button type="button" class="close-button-popup btn-close" id="close-button-popup" aria-label="Close"><i class="fas fa-times"></i></button>
             <h3 id='pop-up-title'>${currentFeature.properties.Name}</h3>
             <h4 id='pop-up-category'>${currentFeature.properties.Category}</h4>
             <h4 id='pop-up-description'><i class="fas fa-directions"></i> ${currentFeature.properties.Address}</h4>
-            <p id='pop-up-description'>${currentFeature.properties.Short_description}</p>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item active">
+                <a class="nav-link active" id="lang-ita-tab" data-toggle="pill" href="#lang-ita" role="tab" aria-controls="lang-ita" aria-selected="true">ITA</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="lang-en-tab" data-toggle="pill" href="#lang-en" role="tab" aria-controls="lang-en" aria-selected="false">EN</a>
+              </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+              <div class="tab-pane fade show active" id="lang-ita" role="tabpanel" aria-labelledby="lang-ita-tab">
+                <p id='pop-up-description'>${currentFeature.properties.Ita_description}</p>
+              </div>
+              <div class="tab-pane fade" id="lang-en" role="tabpanel" aria-labelledby="lang-en-tab">
+                <p id='pop-up-description'>${currentFeature.properties.En_description}</p>
+              </div>
+
+            </div>
+            
             <a class="btn btn-primary" href='https://www.google.com/maps/search/?api=1&query=${google_maps_query_name}' role="button" id="navigation-button" target="_blank">Apri navigazione</a>
             `
           )
